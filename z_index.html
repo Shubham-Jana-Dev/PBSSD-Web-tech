@@ -46,6 +46,33 @@
             text-shadow: 90px;
         
         }
+        .nav-ber{
+            width: 100px;
+            border-collapse: collapse;
+            background-color: rgb(230, 2, 2);
+            color: white;
+            table-layout: fixed;
+        }
+        .nav-ber td{
+            text-align: center;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-ber td a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: block;
+        }
+        .nav-ber td:hover{
+            background-color: rgb(180,0,0);
+            cursor: pointer;
+        }
+        .logo {
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px black;
+}
     </style>
 </head>
 <body>
@@ -56,5 +83,13 @@
     <div class="con" id="con4"></div>
     <div class="con" id="con5"></div>
     <div class="con" id="con6"></div>
+    <table class="nav-bar">
+        <tr>
+            <td class="logo">Tomato</td>
+            <td><a href="#"> Home</a></td>
+            <td><a href="#"> About</a></td>
+            <td><a href="#"> Contact</a></td>
+        </tr>
+    </table>
 </body>
 </html>
