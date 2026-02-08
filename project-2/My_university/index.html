@@ -7,11 +7,14 @@
     <style>
         .navber{
             height: 10vh;
-            width: 100%;
+            width: 96.8%;
             background: linear-gradient(rgb(133, 168, 247),rgb(123, 123, 245));
             padding-top: 15px ;
             padding-left: 20px;
             padding-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 20px;
         }
         .maindiv{
             height: 100vh;
@@ -27,8 +30,38 @@
             width: 80px;
             background: url("assets/logo.png");
             background-size: 100% 100%;
-            border-radius: 50%;
+            border-radius: 50px;
             
+        }
+        .blank1{
+            height: 10vh;
+            width: 600px;
+        }
+        .blank00{
+            height: 1vh;
+            width: 1px;
+        }
+        .home{
+            padding-top: 25px;
+        }
+        .about{
+            padding-top: 25px;
+        }
+        .ourFaculty{
+            padding-top: 25px;
+        }
+        .ourCourses{
+            padding-top: 25px;
+        }
+        .contacat{
+            padding-top: 25px;
+        }
+        .footer{
+            display: flex;
+            justify-content: center;
+            color: aliceblue;
+            /* font-size:x-large; */
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -36,14 +69,18 @@
     <div class="maindiv">
         <div class="navber">
             <div class="logo"></div>
+            <div class="blank00" style="color: aliceblue; font-family: Arial, Helvetica, sans-serif;"><h4>SHUBHAM UNIVERSITY</h4></div>
             <div class="blank1"></div>
-            <div class="home"></div>
-            <div class="about"></div>
-            <div class="ourFaculty"></div>
-            <div class="ourCourses"></div>
-            <div class="contacat"></div>
+            <div class="home" style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">Home</div>
+            <div class="about" style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">About</div>
+            <div class="ourFaculty" style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">Our Facalty</div>
+            <div class="ourCourses " style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">Our Courses</div>
+            <div class="contacat" style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">Get In Touch</div>
         </div>
+        
     </div>
-    
+    <div class="footer" style="height: 50vh; width: 99.999%; background:linear-gradient(rgb(133, 168, 247),rgb(123, 123, 245));"> 
+        <div class="foteraddress"><h2><u>Address</u></h2>
+        <p>11, Dr. U.N. Brahmachari Street (formerly Loudon Street), <br>Kolkata - 700017, West Bengal, India</p></div></div>
 </body>
 </html>
