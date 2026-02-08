@@ -7,7 +7,7 @@
     <style>
         .navber{
             height: 10vh;
-            width: 96.8%;
+            width: 90.8%;
             background: linear-gradient(rgb(133, 168, 247),rgb(123, 123, 245));
             padding-top: 15px ;
             padding-left: 20px;
@@ -15,6 +15,8 @@
             display: flex;
             justify-content: space-between;
             padding-right: 20px;
+            border-radius: 5px;
+            position: sticky;
         }
         .maindiv{
             height: 100vh;
@@ -24,6 +26,10 @@
             background-size: 100% 100%;
             padding-top: 9px ;
             padding-left: 3px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 1px 10px 1px 1px;
+            
         }
         .logo{
             height: 9vh;
@@ -31,11 +37,12 @@
             background: url("assets/logo.png");
             background-size: 100% 100%;
             border-radius: 50px;
+            box-shadow: 1px 1px 20px 1px;
             
         }
         .blank1{
             height: 10vh;
-            width: 600px;
+            width: 400px;
         }
         .blank00{
             height: 1vh;
@@ -63,6 +70,35 @@
             /* font-size:x-large; */
             padding-top: 20px;
         }
+        .Contacat2{
+            display: flex;
+            justify-content: center;
+            color: aliceblue;
+            /* font-size:x-large; */
+            padding-top: 20px;
+        }
+        .foteraddress{
+            height: 30vh;
+            width: 18vw;
+            background: linear-gradient(white,rgb(199, 199, 252));
+            border-radius: 10px;
+            color: black;
+            display: flex;
+            justify-content: center;
+        }
+        .Contacat2{
+            height: 28vh;
+            width: 18vw;
+            background: linear-gradient(white,rgb(199, 199, 252));
+            border-radius: 10px;
+            color: black;
+            display: flex;
+            justify-content: center;
+        }
+        .footer{
+            display: flex;
+            justify-content: space-evenly;
+        }
     </style>
 </head>
 <body>
@@ -79,8 +115,19 @@
         </div>
         
     </div>
+   
     <div class="footer" style="height: 50vh; width: 99.999%; background:linear-gradient(rgb(133, 168, 247),rgb(123, 123, 245));"> 
-        <div class="foteraddress"><h2><u>Address</u></h2>
-        <p>11, Dr. U.N. Brahmachari Street (formerly Loudon Street), <br>Kolkata - 700017, West Bengal, India</p></div></div>
+        <div class="foteraddress"><h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+              </svg><u> Address</u></h2><br>
+        <p>
+            11, Dr. U.N. Brahmachari Street (formerly Loudon Street), <br>Kolkata - 700017, West Bengal, India</p>
+        </div>
+        <br>
+        <div class="Contacat2"><div style="display: flex; justify-content: center;"><h2><u>Contacat</u></h2></div>
+        <p> +91 1800349030, +01 1800349031
+        </div>
+    </div>            
 </body>
 </html>
