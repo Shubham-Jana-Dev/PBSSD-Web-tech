@@ -21,12 +21,15 @@
         .maindiv{
             height: 100vh;
             width: 100%;
-            background: url("assets/Screenshot\ 2026-02-08\ at\ 11.47.24.png ");
+            background: url("assets/vadim-sherbakov-d6ebY-faOO0-unsplash.jpg");
             background-repeat: no-repeat;
+            background-size: cover;
             background-size: 100% 100%;
             padding-top: 9px ;
             padding-left: 3px;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
             box-shadow: 1px 10px 1px 1px;
             
@@ -70,13 +73,14 @@
             /* font-size:x-large; */
             padding-top: 20px;
         }
-        .Contacat2{
+        /* .Contacat2{
             display: flex;
             justify-content: center;
             color: aliceblue;
-            /* font-size:x-large; */
+            font-size:x-large; 
             padding-top: 20px;
-        }
+        } 
+        */
         .foteraddress{
             height: 30vh;
             width: 18vw;
@@ -93,12 +97,38 @@
             border-radius: 10px;
             color: black;
             display: flex;
+            align-items: center;
             justify-content: center;
+
         }
         .footer{
+            height: 50vh;
+            width: 100%;
             display: flex;
             justify-content: space-evenly;
+            background: url("assets/314432-Mon\ Feb\ 09\ 2026\ 08-25-32\ GMT+0000\ \(Coordinated\ Universal\ Time\).jpg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size: 100% 100%;
         }
+        .welcome-text {
+    margin-top: 150px; /* Adjust this to move the text down from the navbar */
+    color: white;
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Makes text readable over images */
+    flex-direction: column;
+    text-align: center;
+}
+.contactustext{
+    margin-top: 15px; /* Adjust this to move the text down from the navbar */
+    color: rgb(18, 2, 52);
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Makes text readable over images */
+    flex-direction: column;
+    text-align: center;
+}
     </style>
 </head>
 <body>
@@ -112,21 +142,26 @@
             <div class="ourFaculty" style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">Our Facalty</div>
             <div class="ourCourses " style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">Our Courses</div>
             <div class="contacat" style="color: rgb(252, 250, 253); font-size: x-large; font-family: Arial, Helvetica, sans-serif">Get In Touch</div>
+            
         </div>
-        
+        <div class="welcome-text">
+            <h1>Welcome to SHUBHAM UNIVERSITY</h1>
+        </div>
     </div>
-   
-    <div class="footer" style="height: 50vh; width: 99.999%; background:linear-gradient(rgb(133, 168, 247),rgb(123, 123, 245));"> 
+    
+    <div class="footer"> 
         <div class="foteraddress"><h2>
+            <div class="contactustext">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-              </svg><u> Address</u></h2><br>
-        <p>
-            11, Dr. U.N. Brahmachari Street (formerly Loudon Street), <br>Kolkata - 700017, West Bengal, India</p>
+              </svg>
+            <h2><u>Address</u></h2>
+                <p>11, Dr. U.N. Brahmachari Street (formerly Loudon Street), <br>Kolkata - 700017, West Bengal, India</p></div>
         </div>
+        
         <br>
-        <div class="Contacat2"><div style="display: flex; justify-content: center;"><h2><u>Contacat</u></h2></div>
-        <p> +91 1800349030, +01 1800349031
+        <div class="Contacat2"> <div class="contactustext"><h2><u>Contacat</u></h2>
+        <p> +91 1800349030, +01 1800349031</p></div>
         </div>
     </div>            
 </body>
