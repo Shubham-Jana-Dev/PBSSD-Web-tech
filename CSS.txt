@@ -6,3 +6,9 @@ Types of CSS
 proparty is auto, basline, center, flex-end, flex-start
 
 align content has space-between, space-around, space-evenly, start, end, basline, center.
+
+flex-grow it helps the content to squeeze and flex-shrink helps to grow the content
+
+What is grid?
+=> It's a display property use for 2D layout by which column in grid use grid template colaumn
+   when we have to create rows in grid that time we use grid template row
