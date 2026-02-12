@@ -1,3 +1,8 @@
 Types of CSS
 1. Inline CSS
 2. Internal CSS
+
+
+proparty is auto, basline, center, flex-end, flex-start
+
+align content has space-between, space-around, space-evenly, start, end, basline, center.
