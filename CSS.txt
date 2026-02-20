@@ -12,3 +12,11 @@ flex-grow it helps the content to squeeze and flex-shrink helps to grow the cont
 What is grid?
 => It's a display property use for 2D layout by which column in grid use grid template colaumn
    when we have to create rows in grid that time we use grid template row
+   .parent{
+      width: 100%;
+      grid-template-colaumns: repeat(3,1fr);
+      grid-template-rows: repeat(4, 1fr);
+
+   }
+
+   
