@@ -14,3 +14,8 @@ update student
 set student_name = 'Sisimanu'
 where student_name like 'Rahul%';
 SELECT * from student;
+use school_system;
+SELECT * from student;
+INSERT into student
+(student_name, age)
+VALUES("Sisimanu",21);
