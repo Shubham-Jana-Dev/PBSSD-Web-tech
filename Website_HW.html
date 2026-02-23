@@ -96,7 +96,7 @@
     width: 100vw;
     display: flex;
     align-items: center;
-    gap: 40vw;
+    gap: 31vw;
     background: rgba(255, 255, 255, 0.468);
     padding-left: 9vw;
     font-family: Arial, Helvetica, sans-serif;
@@ -108,7 +108,7 @@
 .lens{
     display: flex;
     align-items: center;
-    padding-left: 5vw;
+    padding-left: 4vw;
 
 }
 .logo{
@@ -133,7 +133,58 @@ font-size: xx-large;
     text-decoration-color: rgb(245,166,48);
     text-decoration-thickness: 3px;
 }
+.down_maindiv{
+    display: flex;
+}
+.right_from{
+    
+    align-items: center;
+    height: 84.5vh;
+    width: 25vw;
+    background: white;
+    margin-left: 22vw;
+    
+}
+h4{
+    padding-left: 2vw;
+}
+h2{
+    text-align: center;
+    
+}
+#fromitem{
+    
+    height: 5vh;
+    width: 21vw;
+     margin-left: 2vw; 
+     background: none;
+    border: 2px solid rgb(245,166,48);
+    border-radius: 3px;
+    font-size: large;
+    
+}
+#fromitem_submit{
+    height: 6vh;
+    margin-top: 80px;
+    width: 21vw;
+    background: none;
+    border: 2px solid rgb(245,166,48);
+    border-radius: 3px;
+    margin-left: 2vw;
+    font-size: larger;
+    color: rgb(245,166,48);
 
+}
+#fromitem1{
+    height: 4vh;
+    margin-left: 2vw;
+    width: 20vw;
+    background: none;
+    border: 2px solid rgb(245,166,48);
+    border-radius: 3px;
+    
+    
+}
     </style>
 </head>
 <body>
@@ -214,7 +265,28 @@ font-size: xx-large;
             <p>Here are the best hotel booking sites, including recommendations for<br>international travel and for finding low-priced hotel rooms.</p>
             <b id="disnow">DISCOVER NOW</b>
         </div>
-        <div class="right_from"></div>
+        <div class="right_from">
+            <h2>Booking Your Hotel</h2>
+            <form>
+                <h4>Check In: </h4>
+                <input type="date" id="fromitem1">
+                <h4>Check In: </h4>
+                <input type="date" id="fromitem1">
+                <h4>Guests: </h4>
+                <select name="" id="fromitem">
+                    <option><h3>2 ADULTS</h3></option>
+                    <option><h3>1 AUDLTS</h3></option>
+                </select>
+                <h4>Rooms: </h4>
+                <select name="" id="fromitem">
+                    <option><h3>1 ROOM</h3></option>
+                    <option><h3>2 ROOMS</h3></option>
+                </select>
+                <!-- <div class="submit" id="fromitem"> -->
+                <input type="submit" value="CHECK AVAILABILITY" id="fromitem_submit" >
+                <!-- </div> -->
+            </form>
+        </div>
         </div>
     </div>
 </body>
