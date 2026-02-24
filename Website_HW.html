@@ -147,11 +147,20 @@ font-size: xx-large;
 }
 h4{
     padding-left: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 h2{
+    margin-top: 5vw;
     text-align: center;
-    
+    font-family: Georgia, 'Times New Roman', Times, serif; 
 }
+/* #svgcelender{
+    
+    padding-right: 1vw;
+    position: relative;
+    z-index: 1;
+} */
 #fromitem{
     
     height: 5vh;
@@ -161,6 +170,7 @@ h2{
     border: 2px solid rgb(245,166,48);
     border-radius: 3px;
     font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 #fromitem_submit{
@@ -173,17 +183,44 @@ h2{
     margin-left: 2vw;
     font-size: larger;
     color: rgb(245,166,48);
+    font-family: Arial, Helvetica, sans-serif;
+
 
 }
 #fromitem1{
     height: 4vh;
     margin-left: 2vw;
-    width: 20vw;
+    width: 19vw;
     background: none;
     border: 2px solid rgb(245,166,48);
     border-radius: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    padding-right: 30px;
     
-    
+}
+/* .checkout{
+    position: relative;
+    display: inline-block;
+}
+.checkin{
+    position: relative;
+    display: inline-block;
+} */
+#svgcelender{
+    position: absolute;
+    right: 16vw;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color:rgb(245,166,48) ;
+}
+#svgcelender1{
+    position: absolute;
+    right: 16vw;
+     top: 37%;
+    pointer-events: none;
+    color:rgb(245,166,48) ;
 }
     </style>
 </head>
@@ -268,10 +305,20 @@ h2{
         <div class="right_from">
             <h2>Booking Your Hotel</h2>
             <form>
+                <div class="checkin">
                 <h4>Check In: </h4>
                 <input type="date" id="fromitem1">
-                <h4>Check In: </h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" id="svgcelender1">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg>
+                </div>
+                <div class="checkout">
+                <h4>Check Out: </h4>
                 <input type="date" id="fromitem1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" id="svgcelender">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg>
+                </div>
                 <h4>Guests: </h4>
                 <select name="" id="fromitem">
                     <option><h3>2 ADULTS</h3></option>
