@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26-02-2026</title>
+    <style>
+        body{
+            
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .fristbox{
+            
+            display: flex;
+            justify-content: center;
+            height: 100px;
+            width: 200px;
+            background: linear-gradient(rgb(205, 131, 227),rgb(39, 133, 195));
+            display: flex;
+            align-items: center;
+            border-radius: 50px;
+           
+        }
+        #clickme1:visited{
+            text-decoration: none !important;
+            color: rgb(244, 131, 60) !important;
+            border:1.5px dotted red !important;
+            border-radius:45px !important;
+        }
+        #clickme1:before{
+            content: '*';
+        }
+        #clickme1:after{
+            content: '*';
+        }
+        #clickme1:hover{
+            color: greenyellow !important;
+            font-size: x-large;
+            
+        }
+        .fristbox:hover{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 200px;
+            background: linear-gradient(rgb(131, 131, 227),rgb(195, 127, 39));
+            border-radius: 50px;
+            
+        }
+        #clickme1:active{
+            color: rgb(0, 251, 255) !important;
+            font-size: x-large;
+            background: rgb(25, 0, 255);
+            border: 4px dotted rgb(113, 0, 128) !important;
+            border-radius: 50px;
+            
+        }
+        #b123:before{
+            content: '*';
+        }
+        #h25:hover{
+            font-size: xx-large;
+            color: rgb(112, 174, 62);
+        }
+        
+        #v33:visited{
+            color: rgb(194, 235, 106) !important;
+        }
+        #a32:active{
+            color: rgb(194, 235, 106);
+            font-size: x-large;
+            background: rgb(235, 129, 129);
+            border-radius: 45px;
+        }
+        #af34::after{
+            content: '*';
+        }
+    </style>
+</head>
+<body>
+    <div class="maindiv">
+    <h1>Before, Hover, Visited, Active, After</h1>
+    <a href="clickme1.html" id="b123">Before</a><p>As we can see <strong>'*'</strong> which appears before the text, now if we try to inspect the page it would not show there. It is a example of before feature. <br>It's use in form to tell the user which query, they must have to fill.</p>
+    <a href="clickme1.html" id="h25">Hover</a><p>When we move our cursor on the text hover it would become bigger in size and change color (we can add here other css Proparties).<br> It's use to make the page more interactive attractive or tell the user where the cursor is.</p>
+    <a href="clickme1.html" id="v33">Visited</a><p>If you click on the <strong>'visited'</strong> link it's text color will be changed.<br>:visited proparty is used to tell the user, which link they have alrady visited.</p>
+    <a href="clickme1.html" id="a32">Active</a><p>If we click or just click and hold on the <strong>'Active'</strong> button it will be change its font size and background color (we can add more css Proparties).<br> It's use to make the page more interactive attractive or tell the user where the cursor is.</p>
+    <a href="clickme1.html" id="af34">After</a><p>It's similer to the <strong>:before</strong>. We use <strong>'*'</strong> just after the text.<br>It's also use in form to tell the user which query, they must have to fill. </p>
+    <div class="fristbox">
+        <a href="clickme1.html" id="clickme1">Click Me</a>
+    </div>
+</div>
+</body>
+</html>
