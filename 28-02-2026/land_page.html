@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+        }
+        .mav{
+            height: 100vh;
+            width: 100%;
+            top: 0px;
+            padding-top: 0px;
+            margin-top: 0px;
+            background: linear-gradient(rgb(140, 140, 244) ,black); /*url('assets/Hotel_image.jpg');*/
+            /* background-size: cover; */
+            margin: 0;
+            padding: 0;
+            color: aliceblue;
+        }
+        .navber{
+            margin: 0;
+            padding: 0;
+            height: 7vh;
+            width: 100vw;
+            background: rgb(82, 80, 238);
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: azure;
+
+        }
+        .right_side{
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .mainc{
+            text-align: center;
+        }
+        #first_text{
+            font-size: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-shadow: 3px 0px 40px rgb(25, 183, 218);
+        }
+        #nd{
+            padding-left: 300px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-shadow: 1px 0px 20px whitesmoke;
+        }
+        .logo{
+            font-size: x-large;
+            font-weight:800;
+            text-shadow: 5px 0px 40px blueviolet;
+        }
+        .photo1{
+            height: 200px;
+            width: 300px;
+            background-size: cover;
+            background-image: url("https://t3.ftcdn.net/jpg/05/31/71/02/360_F_531710260_ByieqNe7Ut6QBHgIR7xgdsxH7gICrHr1.jpg");
+            border-radius: 15px;
+            text-align: center;
+
+        }
+        .photo2{
+            height: 200px;
+            width: 300px;
+            background-size: cover;
+            background-image: url("https://webandcrafts.com/_next/image?url=https%3A%2F%2Fadmin.wac.co%2Fuploads%2FBest_Backend_Languages_For_2026_1_7b445400dd.jpg&w=4500&q=90");
+            border-radius: 15px;
+            text-align: center;
+        }
+        .photo3{
+            height: 200px;
+            width: 300px;
+            background-size: cover;
+            background-image: url("https://sqltechblog.com/wp-content/uploads/2025/06/4-clouds.png");
+            border-radius: 15px;
+            text-align: center;
+        }
+        .all{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .contact{
+            height: 7vh;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: rgb(217, 0, 255);
+        }
+        .c1{
+            padding-left: 35px;
+        }
+        .dcv{
+            height: 5vh;
+            width: 140px;
+            display: flex;
+            align-items: center;
+            
+            background-color: blueviolet;
+            border-radius: 15px;
+            box-shadow: 4px 0px 50px rgb(131, 183, 234);
+        }
+        .cv{
+            
+            padding: 10px;
+        }
+        h2{
+            padding-left: 300px;
+            font-size: 50px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-shadow:  0px 0px 40px blanchedalmond;
+        }
+        #p1{
+            padding-left: 0px;
+            padding-top: 170px;
+        }
+        footer{
+            height: 70vh;
+            width: 100vw;
+            background: url("https://png.pngtree.com/thumb_back/fh260/background/20240619/pngtree-room-of-virtual-database-image_15798781.jpg");
+            background-size: cover;
+            /* display: flex;
+            justify-content: space-evenly; */
+            align-items: center;
+            padding-left: 40px;
+        }
+        .blank{
+            height: 50px;
+            
+        }
+        .moreinfo{
+            height: 20vh;
+            width: 30vw;
+            background: rgba(129, 178, 239, 0.495);
+            padding-top: 40px;
+            border-radius: 20px;
+            padding-left: 40px;
+            color: rgb(234, 245, 147);
+        }
+        .from{
+            height: 80vh;
+            width: 60vh;
+            background-color: rgb(165, 212, 228);
+            border-radius: 15px;
+            padding-top: 20px;
+            padding-left: 20px;
+            position: relative;
+            z-index: 1;
+            
+        }
+        .f3{
+            padding-top: 2px;
+            padding-left: 30vw;
+        }
+        input{
+            height: 3vh;
+            width: 17vw;
+            text-align: center;
+        }
+        .cfooter{
+            height: 20vh;
+            width: 100vw;
+            background: blueviolet;
+            position: relative;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="mav">
+        <div class="navber">
+        <div class="logo">SHUBHAM</div>
+        <div class="right_side">
+            <div class="about">About Me</div>
+            <div class="contact">
+                <div class="c1">Get in touch</div>
+            </div>
+            <div class="projects">My Projects</div>
+            <div class="dcv">
+                <div class="cv">Download My CV</div>
+            </div>
+        </div>
+        </div>
+        <div class="mainc">
+
+        <h1 id="first_text">Welcome to my porfolio</h1>
+
+        </div>
+        <div class="second">
+            <h1 id="nd">Hi I'm Shubham Jana</h1>
+            <h2>Full Stack Developer :)</h2>
+        </div>
+        <div class="all">
+        <div class="photo1">
+            <h2 id="p1">FRONTENT</h2>
+        </div>
+        <div class="photo2">
+        <h2 id="p1">BACKEND</h2>
+        </div>
+        <div class="photo3">
+            <h2 id="p1">DBMS</h2>
+        </div>
+        </div>
+        
+    </div>
+    <footer>
+<div class="blank"></div>
+<div class="moreinfo">
+    <h3>More information</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus optio quaerat neque minus natus accusamus! Harum sapiente enim dolore quasi tenetur molestiae? Autem animi sapiente fugiat in quidem quam fugit?</p>
+</div>
+<div class="f3">
+<div class="from">
+    <h4>Name</h4>
+    <input type="text" id="name" placeholder="Your Name">
+    <h4>Email</h4>
+    <input type="email" placeholder="Your email or Company email">
+    <h4>Contuct Number</h4>
+    <input type="number" placeholder="contact number">
+    <h4>When I should contact</h4>
+    <input type="date" name="dd" id="dt" >
+    <h4>Company Name</h4>
+    <input type="text" placeholder="Company Name ">
+</div>
+</div>
+    </footer>
+    <div class="cfooter">
+kk
+    </div>
+</body>
+</html>
