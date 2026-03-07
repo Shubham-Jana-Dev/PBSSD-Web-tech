@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content:center;
+            /* align-items:center; */
+        }
+        .roter{
+            height:400px;
+            width:400px;
+            border:0.5px solid rgb(205, 101, 101);
+            border-radius:50%;
+            animation-name: fan;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;       
+            animation-timing-function: linear;
+            display: grid;
+            /* justify-content:center; */
+            
+            grid-template-rows: repeat(2, 2fr);
+            grid-template-columns: repeat(2,2fr) ; 
+            gap: 0px;
+            /* padding-left:25%; */
+            align-items: center;
+            text-align:center;
+            /* transform:skew(45deg); */
+        }
+        
+    .blade1{
+        
+        width:200px;
+        height:5vh;
+        border-radius:50%;
+        border:2px solid black;
+        
+    }
+    .blade2{
+        width:200px;
+        height:5vh;
+        border-radius:50%;
+        border:2px solid black;
+
+    }
+    .blade3{
+        width:200px;
+        height:5vh;
+        border-radius:50%;
+        border:2px solid black;
+    }
+    .blade4{
+        width:200px;
+        height:5vh;
+        border-radius:50%;
+        border:2px solid black;
+    }
+    .p1{
+        transform:rotate(45deg);
+    }
+    .p4{
+        transform:rotate(45deg);
+    }
+    .p2{
+        transform:rotate(-45deg);
+    }
+    .p3{
+        transform:rotate(-45deg);
+    }
+        @keyframes fan{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg);
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+  <div class="maincercal">
+    <div class="roter">
+        <div class="p1"><div class="blade1">1</div></div>
+        <div class="p2"><div class="blade2">2</div></div>
+        <div class="p3"><div class="blade3">3</div></div>
+        <div class="p4"><div class="blade4">4</div></div>
+        
+    </div>
+  </div>  
+</body>
+</html>
