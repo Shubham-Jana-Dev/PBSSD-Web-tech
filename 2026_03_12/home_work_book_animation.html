@@ -13,63 +13,100 @@
             background:rgb(255, 255, 255);
         }
         .mainview{
-            perspective: 600px;
-        }
+            height: 600px;
+            width: 600px;
+            /* perspective-origin:bottom; */
+            perspective:  900px;
+               }
         .outside{
             height:100%;
             width:100%;
             position:relative;
             transform-style: preserve-3D;
-            animation: flip 2s infinite linear;
+            animation: flip 5s infinite linear;
+            transform:rotateX(100deg) rotateY(20deg)
         }
         .front{
+            padding-top: px;
             height:400px;
-            width:400px;
+            width:300px;
             background:rgba(112, 112, 218, 0.43);
             position:absolute;
-            transform:rotateY(0deg) translateZ(100px); 
+            /* transform:scaleX3d(145deg) */
+            transform:rotateY(0deg) translateZ(30px); 
         }
+        .page1{
+            padding-top: px;
+            height:400px;
+            width:300px;
+            background:rgb(27, 27, 255);
+            position:absolute;
+            animation: fip-page 3s infinite normal;
+            
+        }
+        @keyframes fip-page{
+            from{
+                transform:skewY(0deg);
+            }
+            to{
+                transform:skewY(180deg);
+            }
+        } 
         .right{
             height:400px;
-            width:400px;
-            background:blue;
+            width:60px;
+            background:rgba(0, 0, 255, 0.516);
             position:absolute;
-            transform:rotateY(90deg) translateZ(100px); 
+            transform:rotateY(90deg) translateZ(271px); 
         }
         .back{
             height:400px;
-            width:400px;
-            background:rgb(255, 0, 76);
+            width:300px;
+            background:rgba(255, 0, 76, 0.631);
             position:absolute;
-            transform:rotateY(180deg) translateZ(100px); 
+            transform:rotateY(180deg) translateZ(28.99px); 
         }
         .left{
             height:400px;
-            width:400px;
-            background:rgb(0, 255, 110);
+            width:60px;
+            background:rgba(0, 255, 110, 0.547);
             position:absolute;
-            transform:rotateY(-90deg) translateZ(100px); 
+            transform:rotateY(-90deg) translateZ(28px); 
         }
         .top{
-            height:400px;
-            width:400px;
+            height:60px;
+            width:300px;
             background:rgb(234, 255, 0);
             position:absolute;
-            transform:rotateX(90deg) translateZ(100px); 
+            transform:rotateX(90deg) translateZ(30px); 
         }
         .bottom{
-            height:400px;
-            width:400px;
+            height:60px;
+            width:300px;
             background:rgb(255, 0, 200);
             position:absolute;
-            transform:rotateX(-90deg) translateZ(100px); 
+            transform:rotateX(-90deg) translateZ(368px); 
         }
+        .outside{
+            transition: rotateX(30deg) rotateY(30deg) ;
+            
+        }
+
+        @keyframes flijp{
+            from{
+                transform:rotateX(0deg) rotateY(0deg)
+            }
+            to{
+                transform:rotateX(360deg) rotateY(360deg)
+            }
+        } 
     </style>
 </head>
 <body>
     <div class="mainview">
         <div class="outside">
             <div class="front"></div>
+            <div class="page1"></div>
             <div class="left"></div>
             <div class="back"></div>
             <div class="top"></div>
