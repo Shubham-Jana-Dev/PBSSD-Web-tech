@@ -6,14 +6,101 @@
     <title>Document</title>
     
     <style>
+        *{
+            font-family:"Gill Sans", sans-serif;
+        }
         body{
             margin:0;
             padding:0;
             background:rgb(255,82,0);
         }
+        .side_2{
+            margin-top: 11vh;
+            height:100vh;
+            width:100vw;
+            display:flex;
+            justify-content:space-around;
+            position:absolute;
+            gap:60vw;
+
+
+        }
+        .left_img{
+            height:800px;
+            width:400px;
+            background:url("assets/Veggies_new.png.avif");
+            background-size:cover;
+        }
+        .right_img{
+            height:800px;
+            width:400px;
+            background:url("assets/Sushi_replace.png.avif");
+            background-size:cover;
+
+        }
+        .navbar{
+            /* margin-top: */
+            padding-top:60px;
+            height:30px;
+            width:100vw;
+            background:none;
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            /* width:  */
+        }
+        .logo{
+            height:6.7vh;
+            width:12vw;
+            background:url("assets/swiggy_logo_white.png.avif");
+            background-size:cover;
+
+        }
+        .nav_right{
+            display:flex;
+            gap:30px;
+            align-items:center;
+        }
+        h5{
+            font-size:x-large;
+            color:white;
+        }
+        .ga{
+            height:70px;
+            width:200px;
+            background:none;
+            font-size:x-large;
+            border: 1px solid white;
+            border-radius: 18px;
+            color: white;
+        }
+        .sin{
+            height:70px;
+            width:180px;
+            background:black;
+            font-size:x-large;
+            border:none;
+            border-radius: 19px;
+            color: white;
+        }
     </style>
 </head>
-
+<div class="navbar">
+<div class="nav_left">
+    <div class="logo">
+    </div>
+</div>
+<div class="nav_right">
+    <div class="r1"><h5>Swiggy Corporate</h5></div>
+    <div class="r2"><h5>Partner with us</h5></div>
+    <button class="ga">Get the App</button>
+    <button class="sin">Sign in</button>
+</div>
+</div>
+<div class="side_2">
+<div class="left_img"></div>
+<div class="right_img"></div>
+</div>
 <body>
     
 </body>
