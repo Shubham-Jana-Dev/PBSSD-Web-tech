@@ -503,24 +503,22 @@
             flex: 0 0 440px;         
             scroll-snap-align: start;
             border-radius:20px;
-            /* display:flex;
-            justify-content:center; */
             align-items:center;
 
         }
         .inter_image{
-            
-            /* position:relative; */
             height:220px;
             width:440px;
             background:blue;
             border-radius: 20px 20px 0 0;
         }
         .down_white{
+            
             height:220px;
             width:440px;
-            background:rgb(187, 187, 219);
+            background:rgb(255, 255, 255);
             border-radius: 0 0 20px 20px;
+            border:1px solid rgb(235, 232, 232);
         }
         .lower_mid{
             height:50vh;
@@ -537,3 +535,109 @@
             background-image:url("assets/t23_i1.JPG");
             background-size: cover;
         }
+        .title_reat{
+            height:220px;
+            width:440px;
+            display:flex;
+            justify-content:space-between;
+            color:white;
+            font-size:large;
+            font-weight:900;
+            align-items:end;
+        }
+        .number{
+            height: 40px;
+            width: 80px;
+        }
+        .title{
+            height: 40px;
+            width: 260px;
+            margin-bottom:22px;
+            font-weight:800;
+        }
+        .price_in{
+            width:400px;
+            display:flex;
+            justify-content:space-between;
+
+        }
+        .name_price{
+            width:440px;
+            display:flex;
+            justify-content:center;
+            padding-top:20px;
+            font-size:17px;
+
+        }
+        .address_distance{
+            width:440px;
+            display:flex;
+            justify-content:center;
+            padding-top:10px;
+            font-size:17px;
+
+        }
+        .distance_in{
+            width: 400px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .flat_discount{
+            padding-top:20px;
+            width:440px;
+            height:50px;
+            display:flex;
+            justify-content:center;
+
+        }
+        .discount_button{
+            width:400px;
+            height:50px;
+            display:flex;
+            justify-content:center;
+            background:rgb(27, 166, 114);
+            border-radius:18px;
+            font-size:17px;
+            color:white;
+        }
+        .gg_center{
+            width: 375px;
+            height:50px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .left_sidee{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .ofer_png{
+            width:30px;
+            height:30px;
+            background-image:url("assets/OFFER.png");
+            background-size:cover;
+        }
+
+        .bank_ofer{
+            width:400px;
+            height:50px;
+            background:var(--Light-Comms-Positive-Sub,#c8f9e5);
+            border-radius:18px;
+            font-size:20px;
+            text-align:left;
+            color:rgb(27, 166, 114);
+            display:flex;
+            align-items:center;
+        }
+        .out_BF{
+            padding-top:15px;
+            width:440px;
+            height:50px;
+            display:flex;
+            justify-content:center;
+
+        }
+        .eet{
+            padding-left:20px;
+        }
+
