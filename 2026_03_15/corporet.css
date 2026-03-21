@@ -10,6 +10,7 @@
 body{
     margin:0;
     padding:0;
+    overflow-x:hidden;
 }
 .nav_bar{
     height:9rem;
@@ -60,6 +61,8 @@ a{
     background:url("assets/bg_map.webp");
     background-size:cover;
     align-items:center;
+    position:absolute;
+    z-index:-1;
 }
 .main_line{
     height:10rem;
@@ -67,9 +70,30 @@ a{
     border:2px dotted green;
     text-align:center;
     padding-top:5rem;
-    font-size:x-large;
     
+    background:none;
+    position:absolute;
+    z-index:1;
 }
-#heading{
-    font-weight:3000;
+h1{
+    font-size:xxx-large;
+    font-weight:200;
 }
+.right_arrow{
+            height:19rem;
+            width:27%;
+            background:url("assets/about-banner-right-arrow.webp");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            margin-left:73%;
+            border:2px dotted rgb(183, 16, 43);
+        }
+.left_arrow{
+            height:14rem;
+            width:30%;
+            background:url("assets/about-banner-left-arrow.webp");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            margin-top:4%;
+            border:2px dotted rgb(183, 16, 43);
+        }
