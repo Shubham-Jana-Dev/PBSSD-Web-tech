@@ -1,0 +1,16 @@
+body{
+    background: pink;
+}
+nav,ul{
+    display:flex;
+}
+li{
+    list-style-type: none;
+}
+ul{
+    gap:65px;
+}
+nav{
+    background-color: rgb(221, 200, 240);
+    padding: 23px;
+}
