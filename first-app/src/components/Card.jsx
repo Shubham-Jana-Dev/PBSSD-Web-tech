@@ -1,15 +1,11 @@
 import React from "react";
 import './Card.css'
 
-const Card = () =>{
+const Card = (props) =>{
     return (
-        <div className="MainCards">
-        <div className="mycards" id="c1">
-        </div>
-        <div className="mycards" id="c2">
-        </div>
-        <div className="mycards" id="c3">
-        </div>
+        <div className="card">
+            <h4>{props.title}</h4>
+            <p>{props.desccription}</p>
         </div>
     )
 }
