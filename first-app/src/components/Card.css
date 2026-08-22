@@ -1,0 +1,64 @@
+.mycards{
+    /* height:30vh; */
+    width:300px;
+    height:220px;
+    /* aspect-ratio: 3/4; */
+    border:4px solid purple;
+    border-radius: 20px;
+    background-size:cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    /* background-size: 100% 100%; */
+}
+.MainCards{
+    height: 70vh;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url('./assets/ac96fcee2b4fcb11ed6c35876773241a.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+    position:relative; 
+    gap:30px;
+    flex-wrap:wrap;
+    border-radius: 6px;
+    border: 3px solid mediumpurple;
+}
+.MainCards::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Creates a foggy gradient fade */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0.25)
+  );
+  
+  /* Blurs the background image behind the fog */
+  backdrop-filter: blur(4px); 
+  -webkit-backdrop-filter: blur(4px);
+  
+  z-index: 1;
+}
+
+/* Ensure cards stay above the fog layer */
+.mycards {
+  position: relative;
+  z-index: 2;
+}
+#c1{
+    background-image: url('./assets/Screenshot\ 2026-08-22\ at\ 10.01.15.png');
+}
+#c2{
+    background-image: url('./assets/Coding_Image.png');
+}
+#c3{
+    background-image: url('./assets/output.gif');
+}

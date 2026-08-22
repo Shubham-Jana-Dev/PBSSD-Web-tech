@@ -1,5 +1,8 @@
-div{
+.footer{
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    width:100%;
+    color:rgb(245, 111, 245);
+    background-color: rgb(234, 204, 241);
+    position:fixed;
+    bottom:0;
 }

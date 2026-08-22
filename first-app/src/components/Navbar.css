@@ -13,4 +13,14 @@ ul{
 nav{
     background-color: rgb(221, 200, 240);
     padding: 23px;
+    border-radius: 13px;
+    border:3px solid rgb(241, 133, 169)
+}
+.logo{
+    height:60px;
+    width:100px;
+    border-radius: 13px;
+    border:2px solid palevioletred;
+    background: url('./assets/Logo.png');
+    background-size: cover;
 }
