@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmMag - Blog Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 0 15px;
+        }
+
+        .badge {
+            background-color: #e74c3c;
+            color: #fff;
+            font-size: 9px;
+            padding: 2px 6px;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .meta {
+            font-size: 10px;
+            color: #888;
+            margin: 5px 0;
+        }
+
+        .meta i {
+            margin-right: 3px;
+        }
+
+        .section-title {
+            background-color: #e74c3c;
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 6px 10px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Top Header */
+        header {
+            background: #fff;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #e74c3c;
+        }
+
+        .ad-banner {
+            width: 500px;
+            height: 60px;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-style: italic;
+            font-size: 12px;
+            background-color: #fafafa;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #222;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li a {
+            display: block;
+            color: #ccc;
+            padding: 10px 14px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .nav-links li.active a, .nav-links li a:hover {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        .search-icon {
+            color: #ccc;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        /* Main Content Layout */
+        .main-wrapper {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        /* Featured Banner */
+        .featured-banner {
+            position: relative;
+            height: 320px;
+            background: url('https://picsum.photos/800/500?random=1') center/cover no-repeat;
+            margin-bottom: 25px;
+        }
+
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            padding: 20px;
+            color: #fff;
+        }
+
+        .featured-overlay h2 {
+            font-size: 18px;
+            margin: 8px 0;
+            font-weight: 600;
+        }
+
+        .featured-overlay p {
+            font-size: 11px;
+            color: #ddd;
+            line-height: 1.4;
+        }
+
+        /* Post Lists */
+        .recent-posts-header {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .post-card {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .post-card img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .post-details {
+            flex: 1;
+        }
+
+        .post-details h3 {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #222;
+        }
+
+        .post-details p {
+            font-size: 11px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .read-more {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: bold;
+            color: #e74c3c;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Load More Button */
+        .load-more-btn {
+            display: block;
+            width: 120px;
+            margin: 20px auto 30px;
+            padding: 8px 0;
+            background-color: #e74c3c;
+            color: #fff;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        /* Sidebar Elements */
+        .widget {
+            margin-bottom: 25px;
+        }
+
+        .labels-list li {
+            border-bottom: 1px solid #eee;
+            padding: 6px 0;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .labels-list li::before {
+            content: "› ";
+            color: #999;
+        }
+
+        .mini-post {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .mini-post img {
+            width: 60px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .mini-post-info h4 {
+            font-size: 11px;
+            line-height: 1.3;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Social Icons Widget */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .social-grid a {
+            background-color: #f8f8f8;
+            border: 1px solid #eee;
+            padding: 8px 0;
+            color: #e74c3c;
+            font-size: 14px;
+        }
+
+        /* Video Widget */
+        .video-box {
+            position: relative;
+            background: #000;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .video-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .play-btn {
+            position: absolute;
+            font-size: 30px;
+            color: #e74c3c;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: #aaa;
+            padding: 30px 0;
+            margin-top: 20px;
+            font-size: 11px;
+        }
+
+        .footer-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-col {
+            flex: 1;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-category-list li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #444;
+            padding: 5px 0;
+        }
+
+        .footer-mini-post {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-mini-post img {
+            width: 50px;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        .footer-mini-post-info h5 {
+            color: #fff;
+            font-size: 10px;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        .footer-mini-post-info .meta {
+            color: #777;
+            font-size: 9px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="container">
+        <div class="header-container">
+            <div class="logo">Om<span>Mag</span></div>
+            <div class="ad-banner">Advertisement</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Features <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i></a></li>
+                <li><a href="#">Mega Menu <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i></a></li>
+                <li><a href="#">Live Blogger</a></li>
+                <li><a href="#">Documentation <i class="fa-solid fa-chevron-down" style="font-size: 8px;"></i></a></li>
+                <li><a href="#">Download This Template</a></li>
+            </ul>
+            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container main-wrapper">
+        <main class="main-content">
+            
+            <!-- Featured Banner -->
+            <div class="featured-banner">
+                <div class="featured-overlay">
+                    <span class="badge">Healthy</span>
+                    <h2>8 Yoga Poses You Can Do in Your Desk Chair</h2>
+                    <div class="meta" style="color: #ccc;"><i class="fa-regular fa-clock"></i> AUGUST 23, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 15...</p>
+                </div>
+            </div>
+
+            <div class="recent-posts-header">Recent posts</div>
+
+            <!-- Post 1 -->
+            <div class="post-card">
+                <img src="https://picsum.photos/300/200?random=2" alt="Post">
+                <div class="post-details">
+                    <span class="badge">Healthy</span>
+                    <h3>8 Yoga Poses You Can Do in Your Desk Chair</h3>
+                    <div class="meta"><i class="fa-regular fa-user"></i> SORA BLOGGING TIPS &nbsp; <i class="fa-regular fa-clock"></i> AUGUST 23, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lor...</p>
+                    <a href="#" class="read-more">Read more ➔</a>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post-card">
+                <img src="https://picsum.photos/300/200?random=3" alt="Post">
+                <div class="post-details">
+                    <span class="badge">Fashion</span>
+                    <h3>10 Foods That Promote Weight Loss</h3>
+                    <div class="meta"><i class="fa-regular fa-user"></i> SORA BLOGGING TIPS &nbsp; <i class="fa-regular fa-clock"></i> MARCH 17, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lor...</p>
+                    <a href="#" class="read-more">Read more ➔</a>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="post-card">
+                <img src="https://picsum.photos/300/200?random=4" alt="Post">
+                <div class="post-details">
+                    <span class="badge">Healthy</span>
+                    <h3>10 Essential Rules of Good Health</h3>
+                    <div class="meta"><i class="fa-regular fa-user"></i> SORA BLOGGING TIPS &nbsp; <i class="fa-regular fa-clock"></i> MARCH 17, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lor...</p>
+                    <a href="#" class="read-more">Read more ➔</a>
+                </div>
+            </div>
+
+            <!-- Post 4 -->
+            <div class="post-card">
+                <img src="https://picsum.photos/300/200?random=5" alt="Post">
+                <div class="post-details">
+                    <span class="badge">People</span>
+                    <h3>7 Foods for Healthy Hair</h3>
+                    <div class="meta"><i class="fa-regular fa-user"></i> SORA BLOGGING TIPS &nbsp; <i class="fa-regular fa-clock"></i> MARCH 17, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lor...</p>
+                    <a href="#" class="read-more">Read more ➔</a>
+                </div>
+            </div>
+
+            <!-- Post 5 -->
+            <div class="post-card">
+                <img src="https://picsum.photos/300/200?random=6" alt="Post">
+                <div class="post-details">
+                    <span class="badge">Music</span>
+                    <h3>12 Classic Pilates Moves</h3>
+                    <div class="meta"><i class="fa-regular fa-user"></i> SORA BLOGGING TIPS &nbsp; <i class="fa-regular fa-clock"></i> MARCH 17, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lor...</p>
+                    <a href="#" class="read-more">Read more ➔</a>
+                </div>
+            </div>
+
+            <!-- Post 6 -->
+            <div class="post-card">
+                <img src="https://picsum.photos/300/200?random=7" alt="Post">
+                <div class="post-details">
+                    <span class="badge">Healthy</span>
+                    <h3>8 Steps to Eat Better</h3>
+                    <div class="meta"><i class="fa-regular fa-user"></i> SORA BLOGGING TIPS &nbsp; <i class="fa-regular fa-clock"></i> MARCH 17, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lor...</p>
+                    <a href="#" class="read-more">Read more ➔</a>
+                </div>
+            </div>
+
+            <!-- Post 7 -->
+            <div class="post-card">
+                <img src="https://picsum.photos/300/200?random=8" alt="Post">
+                <div class="post-details">
+                    <span class="badge">Photography</span>
+                    <h3>Working Out with Your Baby</h3>
+                    <div class="meta"><i class="fa-regular fa-user"></i> SORA BLOGGING TIPS &nbsp; <i class="fa-regular fa-clock"></i> MARCH 17, 2016</div>
+                    <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lor...</p>
+                    <a href="#" class="read-more">Read more ➔</a>
+                </div>
+            </div>
+
+            <button class="load-more-btn">Load More</button>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            
+            <!-- Labels Widget -->
+            <div class="widget">
+                <div class="section-title">Labels</div>
+                <ul class="labels-list">
+                    <li>Business</li>
+                    <li>Fashion</li>
+                    <li>Featured</li>
+                    <li>Food</li>
+                    <li>Healthy</li>
+                    <li>Learn</li>
+                    <li>Music</li>
+                    <li>Nature</li>
+                    <li>People</li>
+                    <li>Photography</li>
+                    <li>Sports</li>
+                    <li>Technology</li>
+                </ul>
+            </div>
+
+            <!-- Popular Posts Widget -->
+            <div class="widget">
+                <div class="section-title">Popular Posts</div>
+                
+                <div class="mini-post">
+                    <img src="https://picsum.photos/100/100?random=9" alt="Popular">
+                    <div class="mini-post-info">
+                        <h4>8 Yoga Poses You Can Do in Your Desk Chair</h4>
+                        <div class="meta">AUGUST 23, 2016</div>
+                    </div>
+                </div>
+
+                <div class="mini-post">
+                    <img src="https://picsum.photos/100/100?random=10" alt="Popular">
+                    <div class="mini-post-info">
+                        <h4>10 Foods That Promote Weight Loss</h4>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+
+                <div class="mini-post">
+                    <img src="https://picsum.photos/100/100?random=11" alt="Popular">
+                    <div class="mini-post-info">
+                        <h4>10 Essential Rules of Good Health</h4>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+
+                <div class="mini-post">
+                    <img src="https://picsum.photos/100/100?random=12" alt="Popular">
+                    <div class="mini-post-info">
+                        <h4>8 Steps to Eat Better</h4>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Plugin Widget -->
+            <div class="widget">
+                <div class="section-title">Social Plugin</div>
+                <div class="social-grid">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-reddit-alien"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-solid fa-rss"></i></a>
+                </div>
+            </div>
+
+            <!-- Facebook Widget Header -->
+            <div class="widget">
+                <div class="section-title">Facebook</div>
+            </div>
+
+            <!-- Popular Posts Widget 2 -->
+            <div class="widget">
+                <div class="section-title">Popular Posts</div>
+                
+                <div class="mini-post">
+                    <img src="https://picsum.photos/100/100?random=13" alt="Popular">
+                    <div class="mini-post-info">
+                        <h4>8 Yoga Poses You Can Do in Your Desk Chair</h4>
+                        <div class="meta">AUGUST 23, 2016</div>
+                    </div>
+                </div>
+
+                <div class="mini-post">
+                    <img src="https://picsum.photos/100/100?random=14" alt="Popular">
+                    <div class="mini-post-info">
+                        <h4>10 Foods That Promote Weight Loss</h4>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+
+                <div class="mini-post">
+                    <img src="https://picsum.photos/100/100?random=15" alt="Popular">
+                    <div class="mini-post-info">
+                        <h4>10 Essential Rules of Good Health</h4>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscribe Us Widget -->
+            <div class="widget">
+                <div class="section-title">Subscribe Us</div>
+                <div class="video-box">
+                    <img src="https://picsum.photos/300/150?random=16" alt="Video Thumb">
+                    <i class="fa-regular fa-circle-play play-btn"></i>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <!-- Footer Col 1 -->
+            <div class="footer-col">
+                <h4>Recent Posts</h4>
+                <div class="footer-mini-post">
+                    <img src="https://picsum.photos/60/60?random=17" alt="Thumb">
+                    <div class="footer-mini-post-info">
+                        <h5>8 Yoga Poses You Can Do in Your Desk Chair</h5>
+                        <div class="meta">AUGUST 23, 2016</div>
+                    </div>
+                </div>
+                <div class="footer-mini-post">
+                    <img src="https://picsum.photos/60/60?random=18" alt="Thumb">
+                    <div class="footer-mini-post-info">
+                        <h5>10 Foods That Promote Weight Loss</h5>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+                <div class="footer-mini-post">
+                    <img src="https://picsum.photos/60/60?random=19" alt="Thumb">
+                    <div class="footer-mini-post-info">
+                        <h5>10 Essential Rules of Good Health</h5>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Col 2 -->
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul class="footer-category-list">
+                    <li><span>› Fashion</span><span>5</span></li>
+                    <li><span>› Food</span><span>3</span></li>
+                    <li><span>› Healthy</span><span>3</span></li>
+                    <li><span>› Music</span><span>4</span></li>
+                    <li><span>› Nature</span><span>2</span></li>
+                    <li><span>› People</span><span>5</span></li>
+                    <li><span>› Photography</span><span>3</span></li>
+                </ul>
+            </div>
+
+            <!-- Footer Col 3 -->
+            <div class="footer-col">
+                <h4>Recent in Fashion</h4>
+                <div class="footer-mini-post">
+                    <img src="https://picsum.photos/60/60?random=20" alt="Thumb">
+                    <div class="footer-mini-post-info">
+                        <h5>10 Foods That Promote Weight Loss</h5>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+                <div class="footer-mini-post">
+                    <img src="https://picsum.photos/60/60?random=21" alt="Thumb">
+                    <div class="footer-mini-post-info">
+                        <h5>7 Foods for Healthy Hair</h5>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+                <div class="footer-mini-post">
+                    <img src="https://picsum.photos/60/60?random=22" alt="Thumb">
+                    <div class="footer-mini-post-info">
+                        <h5>12 Classic Pilates Moves</h5>
+                        <div class="meta">MARCH 17, 2016</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
