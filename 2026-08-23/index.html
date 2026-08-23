@@ -3,9 +3,605 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Corporate Flyer Template</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        /* Standard A4 Aspect Ratio Canvas Container */
+        .flyer {
+            width: 800px;
+            height: 1130px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            color: #333;
+        }
+
+        /* Background Base Grid Split */
+        .bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Top-Left Dark Hero Image Container with Custom Clip Path */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 535px;
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            clip-path: polygon(0 0, 100% 0, 100% 68%, 68% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        /* Overlay tone for Hero BG */
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+        }
+
+        /* Yellow Corner Accent on Top Left Header */
+        .yellow-badge-top {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 340px;
+            height: 220px;
+            background: #ffc107;
+            clip-path: polygon(0 0, 100% 0, 60% 100%, 0 70%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+            padding-bottom: 20px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #0d1b3e;
+        }
+
+        .logo-box i {
+            font-size: 38px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Right Text Block */
+        .header-right {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            text-align: right;
+            z-index: 5;
+        }
+
+        .header-right h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #0c1a35;
+            line-height: 1.2;
+        }
+
+        /* Hero Text Content Overlay */
+        .hero-content {
+            position: absolute;
+            top: 210px;
+            left: 45px;
+            width: 380px;
+            z-index: 10;
+            color: #ffffff;
+        }
+
+        .script-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #ffc107;
+            margin-bottom: -15px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 46px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            line-height: 1;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .hero-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .divider-bar {
+            width: 45px;
+            height: 5px;
+            background-color: #ffffff;
+            margin-bottom: 18px;
+        }
+
+        .hero-content p {
+            font-size: 11.5px;
+            line-height: 1.6;
+            color: #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        .signature-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dots-pattern {
+            color: #ffc107;
+            font-size: 10px;
+            letter-spacing: 4px;
+            margin-bottom: 2px;
+        }
+
+        .signature-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 34px;
+            color: #ffffff;
+        }
+
+        /* Main Hexagon Image Frame */
+        .hexagon-wrapper {
+            position: absolute;
+            top: 170px;
+            right: 40px;
+            width: 350px;
+            height: 380px;
+            z-index: 6;
+            filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.15));
+        }
+
+        .hexagon-border {
+            width: 100%;
+            height: 100%;
+            background: #ffc107;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+        }
+
+        .hexagon-img {
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop') center/cover no-repeat;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        /* Lower Content Section Grid */
+        .content-body {
+            position: absolute;
+            top: 520px;
+            left: 0;
+            width: 100%;
+            padding: 0 45px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        /* About Us Left Column */
+        .about-section {
+            width: 320px;
+        }
+
+        .section-title-dark {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #0c1a35;
+            margin-bottom: 12px;
+        }
+
+        .about-section p {
+            font-size: 11px;
+            line-height: 1.65;
+            color: #555555;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Team Profiles Row */
+        .team-row {
+            display: flex;
+            gap: 25px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .avatar-ring {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #ffc107, #0c1a35);
+            margin: 0 auto 8px auto;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+        }
+
+        .member-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            color: #0c1a35;
+        }
+
+        .member-role {
+            font-size: 9.5px;
+            color: #777;
+        }
+
+        /* Services Right Column */
+        .services-section {
+            width: 330px;
+            padding-top: 20px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .service-icon {
+            width: 28px;
+            height: 28px;
+            background-color: #0c1a35;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .service-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #0c1a35;
+            margin-bottom: 2px;
+        }
+
+        .service-info p {
+            font-size: 9.5px;
+            line-height: 1.4;
+            color: #666666;
+        }
+
+        /* Bottom Yellow Phone Bar */
+        .phone-banner {
+            position: absolute;
+            bottom: 180px;
+            left: 0;
+            width: 375px;
+            height: 55px;
+            background: #ffc107;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .phone-icon-box {
+            font-size: 22px;
+            color: #0c1a35;
+        }
+
+        .phone-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #0c1a35;
+            letter-spacing: 0.5px;
+        }
+
+        .dots-decor-bottom {
+            position: absolute;
+            bottom: 185px;
+            left: 395px;
+            color: #0c1a35;
+            font-size: 8px;
+            letter-spacing: 3px;
+            z-index: 10;
+        }
+
+        /* Bottom Dark Footer Section */
+        .footer-banner {
+            position: absolute;
+            bottom: 75px;
+            left: 0;
+            width: 530px;
+            height: 110px;
+            background: #0c1a35;
+            border-top-right-radius: 60px;
+            z-index: 8;
+            padding: 22px 0 0 45px;
+            color: #ffffff;
+        }
+
+        .company-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .address-text {
+            font-size: 10.5px;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            font-size: 10px;
+            color: #ffffff;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .social-item i {
+            color: #ffc107;
+            font-size: 11px;
+        }
+
+        /* QR Code Block */
+        .qr-wrapper {
+            position: absolute;
+            bottom: 75px;
+            right: 45px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .qr-code {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <div class="flyer">
+        <!-- Background Overlay Layer -->
+        <div class="bg-layer">
+            <div class="hero-bg"></div>
+        </div>
+
+        <!-- Top Left Yellow Badge with Logo -->
+        <div class="yellow-badge-top">
+            <div class="logo-box">
+                <i class="fa-solid fa-cubes"></i>
+                <div class="logo-text">LOGO<br>HERE</div>
+            </div>
+        </div>
+
+        <!-- Top Right Header Title -->
+        <div class="header-right">
+            <h2>Creative<br>Marketing<br>Agency</h2>
+        </div>
+
+        <!-- Center Hexagon Featured Image -->
+        <div class="hexagon-wrapper">
+            <div class="hexagon-border">
+                <div class="hexagon-img"></div>
+            </div>
+        </div>
+
+        <!-- Hero Headline Content -->
+        <div class="hero-content">
+            <div class="script-title">Grow your</div>
+            <h1>BUSINESS</h1>
+            <h3>WITH US</h3>
+            <div class="divider-bar"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            <div class="signature-container">
+                <div class="dots-pattern">&#9679; &#9679; &#9679;</div>
+                <div class="signature-text">Signature</div>
+            </div>
+        </div>
+
+        <!-- Main Body Content -->
+        <div class="content-body">
+            
+            <!-- Left Column: About Us -->
+            <div class="about-section">
+                <h3 class="section-title-dark">About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                
+                <div class="team-row">
+                    <div class="team-member">
+                        <div class="avatar-ring">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" class="avatar-img" alt="Person Name">
+                        </div>
+                        <div class="member-name">Person name</div>
+                        <div class="member-role">Lorem ipsum dolor sit</div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="avatar-ring">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&auto=format&fit=crop" class="avatar-img" alt="Person Name">
+                        </div>
+                        <div class="member-name">Person name</div>
+                        <div class="member-role">Lorem ipsum dolor sit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Our Services -->
+            <div class="services-section">
+                <h3 class="section-title-dark">Our Services</h3>
+                
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="service-info">
+                        <h4>Creative Concept</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <div class="service-info">
+                        <h4>Market Analysis</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+                    <div class="service-info">
+                        <h4>Management System</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-user"></i></div>
+                    <div class="service-info">
+                        <h4>Digital Avertising</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <div class="service-info">
+                        <h4>Cloud Technologies</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="service-info">
+                        <h4>Development</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon"><i class="fa-solid fa-desktop"></i></div>
+                    <div class="service-info">
+                        <h4>Worldwide Marketing</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Phone Banner -->
+        <div class="phone-banner">
+            <div class="phone-icon-box">
+                <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <div class="phone-number">1800 188 0000</div>
+        </div>
+
+        <div class="dots-decor-bottom">&#9679; &#9679;<br>&#9679; &#9679;</div>
+
+        <!-- Dark Blue Bottom Footer Section -->
+        <div class="footer-banner">
+            <div class="company-title">COMPANY NAME</div>
+            <div class="address-text">Your address goes here, City - 123456 | www.yourweb.com</div>
+            
+            <div class="social-links">
+                <div class="social-item">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>yourclub_IG</span>
+                </div>
+                <div class="social-item">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>yourclub_Fb</span>
+                </div>
+                <div class="social-item">
+                    <i class="fa-brands fa-twitter"></i>
+                    <span>yourclub_Tw</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Right QR Code -->
+        <div class="qr-wrapper">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.yourweb.com" alt="QR Code" class="qr-code">
+        </div>
+
+    </div>
+
 </body>
 </html>
